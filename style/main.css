@@ -1,0 +1,546 @@
+/* Указываем box sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Убираем внутренние отступы */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+
+/* Убираем внешние отступы */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Выставляем основные настройки по-умолчанию для body */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+ul[class],
+ol[class] {
+  list-style: none;
+}
+
+/* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
+
+a{
+    text-decoration:none;
+}
+/* Упрощаем работу с изображениями */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Указываем понятную периодичность в потоке данных у article*/
+article > * + * {
+  margin-top: 1em;
+}
+
+/* Наследуем шрифты для инпутов и кнопок */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    /* отображаем курсор в виде руки при наведении; некоторые
+    считают, что необходимо оставлять стрелочный вид для кнопок */
+    cursor: pointer;
+  }
+
+/* Подключаем шрифт */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap');
+
+/* Основные стили */
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    color: #1A1A1A;
+}
+.body_dark{
+    background: #000;
+}
+/* Шапка */
+.header {
+    width: 100%;
+    height: 74px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+    margin-bottom: 30px;
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+
+}
+.body_dark .header_dark{
+    background: #000000;
+    box-shadow: none;
+    border-bottom: 1px solid #FFFFFF;
+}
+.header__content {
+    max-width: 1280px;
+    height: 100%;
+    padding: 0px 24px 0px 24px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo-descr{
+    display: flex;
+}
+.header__info-theme{
+    display: flex;
+}
+
+/*! Шапка Logo*/
+.header__logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #13A5F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    cursor: default;
+}
+.body_dark .header__logo_dark{
+    border: 1px solid #FFFFFF;
+}
+.header__logo-text {
+    opacity: 1;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+    color: #13A5F6;
+    padding-top: 2px;
+}
+.body_dark .header__logo-text_dark{
+    color: #000000;
+    opacity: 1;
+    padding-top: 3px;
+    
+}
+
+/*! Шапка Description*/
+.header__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+.header__description-name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+    color: #000000;
+    opacity: 0.9;
+}
+.header__description-front {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 14px;
+    color: #000000;
+    opacity: 0.5;
+}
+.body_dark .header__description-name_dark {
+    color: #FFFFFF;
+    opacity: 0.9;
+}
+.body_dark .header__description-front_dark {
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+
+/*! Шапка Info*/
+.header__button-info {
+    width: 34px;
+    height: 34px;
+    margin-right: 8px;
+    border-radius: 50%;
+    background: #ffffff;
+    border: 1px solid #13A5F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.header__button-info:hover {
+    border: 2px solid #13A5F6;
+}
+.header__button-info-text {
+    opacity: 1;
+    padding-top: 2px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 21px;
+    letter-spacing: 0.03em;
+    color: #13A5F6;
+}
+.body_dark .header__button-info_dark {
+    background: #000000;
+    border: 1px solid #FFFFFF;
+}
+.body_dark .header__button-info-text_dark {
+    color: #FFFFFF;
+}
+.body_dark .header__button-info_dark:hover {
+    border: 2px solid #FFFFFF;
+}
+
+/*! Шапка Theme*/
+.header__button-theme {
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+}
+.header__button-theme-bg {
+    width: 17px;
+    height: 34px;
+    background: #13A5F6;
+    border: 1px solid #13A5F6;
+    border-radius: 30px;
+    display: flex;
+    cursor: pointer;
+}
+.header__button-theme-bg:hover {
+    background: #0297EA;
+    border: 1px solid #0297EA;
+}
+.header__button-theme-circle {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #ffffff;
+}
+.body_dark .header__button-theme-bg_dark {
+    width: 17px;
+    height: 34px;
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    border-radius: 30px;
+    display: flex;
+    cursor: pointer;
+}
+.body_dark .header__button-theme-bg_dark:hover {
+    background: #FFFFFF;
+    border: 1px solid #FFFFFF;
+    opacity: 0.95;
+}
+.body_dark .header__button-theme-circle_dark {
+    width: 15px;
+    height: 15px;
+    margin-top: 17px;
+    border-radius: 50%;
+    background: #000000;
+}
+
+/* Контент */
+.content{
+    max-width: 1280px;
+    padding: 0px 24px 0px 24px;
+    margin: 0 auto;
+}
+.links{
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+.link_item{
+    width: 80px;
+    height: 21px;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border-radius: 2px;
+    margin-right: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.body_dark .link_item_dark{
+    background: transparent;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ffffff;
+    border-radius: 2px;
+    margin-right: 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.link_item:hover{
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.25);
+}
+.body_dark .link_item_dark:hover{
+    border: 2px solid #ffffff;
+}
+.link_item-text{
+    font-size: 12px;
+    font-weight: 500;
+    color: #000000;
+    opacity: 0.5;
+}
+.body_dark .link_item-text_dark{
+    color: #FFFFFF;
+    opacity: 0.7;
+}
+.body_dark .link_item-text_active_dark{
+    opacity: 0.9;
+}
+.link_item-text_active{
+    opacity: 0.9;
+}
+.tabs {
+    max-width: 1280px;
+}
+.tab_wrapper{
+    background: #ffffff;
+    width: calc(100% + 20px);
+}
+.tab {
+    max-width: 1232px;
+    height: auto;
+    background: #ffffff;
+    border-radius: 2px;
+    margin-bottom: 11px;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.25);
+    padding: 0px 12px 0px 12px;
+    position: relative;
+}
+.body_dark .tab_dark {
+    background: #000000;
+    border: 1px solid #ffffff;
+}
+
+.tab:hover{
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.35);
+}
+.tab_active{
+    padding: 0px 12px 52px 12px;
+    position: absolute;
+    z-index: 9999;
+    width: 100%;
+}
+
+.tab__title {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.tab__title-text{
+    color: #000000;
+    opacity: 0.9;
+    font-size: 16px;
+    line-height: 19px;
+}
+.body_dark .tab__title-text_dark{
+    color: #FFFFFF;
+}
+.tab__icon-state {
+    width: 10.8px;
+    height: 11px;
+    background: #FFFFFF;
+    border: 1px solid #13A5F6;
+    border-radius: 50%;
+}
+.body_dark .tab__icon-state_dark{
+    background: transparent;
+    border: 1px solid #ffffff;
+}
+
+.tab_content {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    opacity: 0.9;
+    z-index: 10;
+    display: none;
+}
+.tab_active .tab__content_active{
+    display: block;
+}
+.tab_active .tab__icon-state_active{
+    background: #13A5F6;
+}
+.body_dark .tab_active .tab__icon-state_active{
+    background: #FFFFFF;
+}
+.tab__description {
+    max-width: 1050px;
+    margin-bottom: 30px;
+}
+.body_dark .tab__description_dark{
+    color: #FFFFFF;
+}
+.tab__code {
+    color: #00B5EE;
+}
+.tab__btn_copy {
+    position: absolute;
+    right: 100px;
+    bottom: 16px;
+    margin-right: 0;
+}
+
+.tab__btn_close {
+    position: absolute;
+    right: 12px;
+    bottom: 16px;
+    margin-right: 0px;
+}
+strong{
+    color: #166ae7;
+}
+b{
+    color: #00B81D;
+}
+d{
+    font-weight: 700;
+    color: #BA02D8;
+}
+.modal_wrapper_none{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: #000;
+    opacity: 0.5;
+    z-index: 10;
+    display: none;
+    z-index: 10000000;
+}
+
+
+.modal {
+    display: none;
+    position: fixed;
+    left: 50%;
+    right: 50%;
+    margin-left: -350px;
+    top: 20%;
+    width: 700px;
+    background: #fff;
+    z-index: 100000000;
+    padding: 16px; 
+}
+.body_dark .modal_dark{
+    background: #000000;
+    border:1px solid #FFFFFF;
+}
+.body-modal_block{
+    overflow: hidden;
+}
+.body-modal_block .modal_wrapper_block {
+    display: block;
+}
+.body-modal_block .modal_block {
+    display: block;
+}
+.modal__content {
+    position: relative;
+}
+.modal__img{
+    width: 50px;
+    height: 50px;
+    border: none;
+}
+.body_dark .modal__img_dark{
+    border: none;
+}
+.modal__iio {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.modal__btn_close{
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    box-sizing: border-box;
+}
+
+.modal__icon-close {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 50%px;
+    top: 50%px;
+    margin-top: -7.5px;
+    margin-left: -6px;
+}
+.modal__icon-close::after {
+    position: absolute;
+    content: "";
+    background-image: url('/images/icon-close-blue.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+}
+.body-modal_block .modal__icon-close_dark {
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    left: 50%px;
+    top: 50%px;
+    margin-top: -7.5px;
+    margin-left: -6px;
+}
+.body-modal_block .modal__icon-close_dark::after {
+    position: absolute;
+    content: "";
+    background-image: url('/images/icon-close-white.png');
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+}
+.my-photo{
+    width: 50px;
+    height: 50px;
+}
